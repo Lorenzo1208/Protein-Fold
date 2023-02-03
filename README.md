@@ -1,17 +1,17 @@
-# 🎈 ESMFold
+# 🧪 ESMFold
 
-[*ESMFold*](https://esmatlas.com/about) is an end-to-end single sequence protein structure predictor based on the ESM-2 language model.
+[*ESMFold*](https://esmatlas.com/about) est un prédicteur de structure protéique à séquence unique de bout en bout basé sur le modèle de langage ESM-2.
 
-## Demo App
+## Application de démonstration
 
-[![Streamlit App](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white)](https://esmfold.streamlit.app/)
+[!Streamlit App](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white)](https://esmfold.streamlit.app/)
 
-## Credit
+## Crédit
 
-This app was inspired by [osanseviero's app](https://huggingface.co/spaces/osanseviero/esmfold).
+Cette application a été inspirée par l'application de [osanseviero](https://huggingface.co/spaces/osanseviero/esmfold).
 
-## Further Reading
-For more information, read the following articles:
-- [ESM Metagenomic Atlas: The first view of the ‘dark matter’ of the protein universe](https://ai.facebook.com/blog/protein-folding-esmfold-metagenomics/)
-- [Evolutionary-scale prediction of atomic level protein structure with a language model](https://www.biorxiv.org/content/10.1101/2022.07.20.500902v2)
-- [AlphaFold’s new rival? Meta AI predicts shape of 600 million proteins](https://www.nature.com/articles/d41586-022-03539-1)
+## Lecture complémentaire
+Pour plus d'informations, lisez les articles suivants :
+- [Atlas métagénomique de l'ESM : La première vue de la "matière noire" de l'univers des protéines](https://ai.facebook.com/blog/protein-folding-esmfold-metagenomics/)
+- Prédiction à l'échelle évolutive de la structure des protéines au niveau atomique à l'aide d'un modèle linguistique](https://www.biorxiv.org/content/10.1101/2022.07.20.500902v2)
+- Le nouveau rival d'AlphaFold : Meta AI prédit la forme de 600 millions de protéines](https://www.nature.com/articles/d41586-022-03539-1)
