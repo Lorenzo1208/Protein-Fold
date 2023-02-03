@@ -20,7 +20,7 @@ def render_mol(pdb):
 
 # Entrée de la séquence de la protéine
 DEFAULT_SEQ = "MGSSHHHHHHSSGLVPRGSHMRGPNPTAASLEASAGPFTVRSFTVSRPSGYGAGTVYYPTNAGGTVGAIAIVPGYTARQSSIKWWGPRLASHGFVVITIDTNSTLDQPSSRSSQQMAALRQVASLNGTSSSPIYGKVDTARMGVMGWSMGGGGSLISAANNPSLKAAAPQAPWDSSTNFSSVTVPTLIFACENDSIAPVNSSALPIYDSMSRNAKQFLEINGGSHSCANSGNSNQALIGKKGVAWMKRFMDNDTRYSTFACENPNSTRVSDFRTANCSLEDPAANKARKEAELAAATAEQ"
-txt = st.sidebar.text_area('Ajouter la séquence', DEFAULT_SEQ, height=275)
+txt = st.sidebar.text_area('Ajouter la séquence', DEFAULT_SEQ, height=500)
 
 # ESMfold
 def update(sequence=txt):
@@ -58,3 +58,33 @@ predict = st.sidebar.button('Prédire', on_click=update)
 if not predict:
     st.warning('👈 Entrer la séquences de la protéine !')
 
+import pandas as pd
+import requests
+import streamlit as st
+
+def load_fasta(url):
+    response = requests.get(url)
+    data = response.text.split('\n')
+    data = [x for x in data if x]
+    records = []
+    header = ''
+    sequence = ''
+    for line in data:
+        if line.startswith('>'):
+            if header:
+                records.append((header, sequence))
+                header = ''
+                sequence = ''
+            header = line[1:]
+        else:
+            sequence += line
+    records.append((header, sequence))
+    df = pd.DataFrame(records, columns=['header', 'sequence'])
+    df = df[df['sequence'].str.len() < 100]
+    return df
+
+df = load_fasta('https://raw.githubusercontent.com/soedinglab/MMseqs2/master/examples/QUERY.fasta')
+df['sequence'].rename('Exemple de séquences de protéines', inplace=True)
+
+st.write('## Exemple de séquences de protéines ⚗️')
+st.write(df['sequence'])
