@@ -88,4 +88,4 @@ df['sequence'].rename('Exemple de séquences de protéines', inplace=True)
 
 st.write('## Exemple de séquences de protéines ⚗️')
 st.write(df['sequence'])
-st.sidebar.title("[Atlas des protéines](https://esmatlas.com/explore?at=2.0929007530212402%2C1.1427013874053955%2C0.05168796671072847)")
+st.title("[Atlas des protéines](https://esmatlas.com/explore?at=2.0929007530212402%2C1.1427013874053955%2C0.05168796671072847)")
